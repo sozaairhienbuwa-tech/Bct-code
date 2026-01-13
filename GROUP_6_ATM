@@ -46,14 +46,10 @@ def StartMenu():
 
     while True:
         print('Hello User')
-        Menu = input('Enter y to start the program, Group6 for developers options: ')
+        Menu = input('Enter y to start the program')
 
         if Menu == 'y':
             UserProgram()
-        elif Menu == 'Group6':
-            DevMenu()
-        elif Menu == 'group6':
-            DevMenu()
         else:
             print('Invalid Option')
             continue
@@ -100,6 +96,7 @@ def AccountCreation():
     global passhold
     global Accountlist
 
+
     print('\n')
 
     if len(Accountlist.accounts) == Accountlist.max_acc:
@@ -109,33 +106,40 @@ def AccountCreation():
         UserProgram()
     else:
         while True:
+            NameExists = False
             NewUsername = input('[PLEASE ENTER AN ACCOUNT USERNAME]: ')
             i = 0
 
             for Account in Accountlist.accounts:
                 if NewUsername == Accountlist.accounts[i].username:
-                    print('[NAME IN USE, TRY AGAIN]')
-                    print('[...]')
-                    continue
+                    NameExists = True
+                    # nya neko nya change 1
 
                 else:
-                    i += 1
+                    pass
 
-            print('[USERNAME ACCEPTED]')
-            NewPassword = input('[ENTER PASSWORD]: ')
-            ConfirmPassword = input('[CONFIRM PASSWORD]: ')
 
-            if NewPassword == ConfirmPassword:
-                print('[ACCOUNT CREATED!]')
-                print('[...]')
-                namehold = NewUsername
-                passhold = ConfirmPassword
-                Setpin()
-
-            else:
-                print('[PASSWORD DOES NOT MATCH]')
+            if NameExists == True:
+                print('[NAME IN USE, TRY AGAIN]')
                 print('[...]')
                 continue
+
+            else:
+                print('[USERNAME ACCEPTED]')
+                NewPassword = input('[ENTER PASSWORD]: ')
+                ConfirmPassword = input('[CONFIRM PASSWORD]: ')
+
+                if NewPassword == ConfirmPassword:
+                    print('[ACCOUNT CREATED!]')
+                    print('[...]')
+                    namehold = NewUsername
+                    passhold = ConfirmPassword
+                    Setpin()
+
+                else:
+                    print('[PASSWORD DOES NOT MATCH]')
+                    print('[...]')
+                    continue
 
 
 # The menu to make an account pin
