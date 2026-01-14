@@ -62,17 +62,17 @@ def UserProgram():
 
     print('\n')
 
-    print('Enter c to [CREATE NEW ACCOUNT]')
-    print('Enter v to [LOGIN TO EXISTING ACCOUNT]')
-    print('Enter b to [RETURN TO MAIN MENU]')
+    print('Enter C to [CREATE NEW ACCOUNT]')
+    print('Enter V to [LOGIN TO EXISTING ACCOUNT]')
+    print('Enter B to [RETURN TO MAIN MENU]')
 
-    Option = input('[ENTER YOUR OPTION]...')
+    Option = input('[ENTER YOUR OPTION]...').capitalize 
 
-    if Option == 'c':
+    if Option == 'C':
         AccountCreation()
-    elif Option == 'b':
+    elif Option == 'B':
         StartMenu()
-    elif Option == 'v':
+    elif Option == 'V':
         if len(Accountlist.accounts) < 1:
             print('[NO ACCOUNTS AVAILABLE]')
             print('[CREATE AN ACCOUNT]')
