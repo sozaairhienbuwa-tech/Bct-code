@@ -66,7 +66,7 @@ def UserProgram():
     print('Enter V to [LOGIN TO EXISTING ACCOUNT]')
     print('Enter B to [RETURN TO MAIN MENU]')
 
-    Option = input('[ENTER YOUR OPTION]...').capitalize 
+    Option = input('[ENTER YOUR OPTION]...').capitalize()
 
     if Option == 'C':
         AccountCreation()
@@ -116,7 +116,7 @@ def AccountCreation():
                     # nya neko nya change 1
 
                 else:
-                    pass
+                    i+=1
 
 
             if NameExists == True:
